@@ -21,9 +21,7 @@ public final class Tractor extends Vehicle implements FarmVehicle {
        }
     }
 
-    public void operate() {
-
-    }
+    public void operate() { }
 
     public String makeNoise() {
         return "Purrrrrrr";
