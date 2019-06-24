@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.List;
+
 public class Week {
 
     private Day currentDay;
@@ -94,7 +96,6 @@ public class Week {
         currentDay = Day.SUNDAY;
         printDay();
         runMorning();
-        delay(1000);
         console.println("In the afternoon: ");
         Froilan.getInstance().plant(new PotatoPlant(), 30);
         Froilan.getInstance().plant(new TomatoPlant(), 10);
@@ -102,37 +103,47 @@ public class Week {
         console.println("Froilan plants 30 potatoes, 10 tomato plants, and 200 corn stalks");
         console.println("Froilanda gets engine oil for her crop duster.");
         console.println("They go to bed with the sun.");
-        delay(500);
     }
 
 
     public void runMonday() {
         currentDay = Day.MONDAY;
         printDay();
-        delay(500);
         runMorning();
-        delay(500);
         console.println(Froilanda.getInstance().mount(CropDuster.getINSTANCE()));
         console.println(Froilanda.getInstance().flyAircraft(CropDuster.getINSTANCE()));
         console.println(CropDuster.getINSTANCE().makeNoise());
         CropDuster.getINSTANCE().fertilize();
+        console.println(Froilanda.getInstance().dismount(CropDuster.getINSTANCE()));
+        console.println("Froilan heads to harvest eggs.");
+        console.println(farm.getCoops().get(0).getChickens().get(0).makeNoise());
+        console.println(Froilan.getInstance().harvestEggs(farm));
+        console.println("Froilan and Froilanda head to bed");
     }
 
     public void runTuesday() {
         currentDay = Day.TUESDAY;
         printDay();
         runMorning();
-        
+        console.println(Froilan.getInstance().mount(Tractor.getINSTANCE()));
+        console.println(Tractor.getINSTANCE().makeNoise());
+        Tractor.getINSTANCE().operate();
+        console.println(Froilan.getInstance().dismount(Tractor.getINSTANCE()));
+        console.println("Froilan fills up the silo with Sunday's plants");
+        console.println("Froilanda goes around the coops to harvest some eggs.");
+        console.println(Froilanda.getInstance().harvestEggs(farm));
 
+        
     }
+
     public void runWednesday() {
         currentDay = Day.WEDNESDAY;
         printDay();
         runMorning();
         console.println("In the afternoon: ");
-        Froilanda.getInstance().plantMany(new PotatoPlant(), 60);
-        Froilanda.getInstance().plantMany(new SoyPlant(), 70);
-        Froilanda.getInstance().plantMany(new CornStalk(), 250);
+        Froilanda.getInstance().plant(new PotatoPlant(), 60);
+        Froilanda.getInstance().plant(new SoyPlant(), 70);
+        Froilanda.getInstance().plant(new CornStalk(), 250);
         Froilan.getInstance().plant(new OkraPlant(), 50);
         Froilan.getInstance().plant(new TomatoPlant(), 80);
         console.println("Froilanda plants 60 potatoes, 70 soy plants, and 250 corn stalks");
