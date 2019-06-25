@@ -25,4 +25,36 @@ public class CropDusterTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void setRider() {
+        Froilanda rider = new Froilanda();
+        CropDuster cd = new CropDuster();
+        cd.setRider(rider);
+
+    }
+
+    @Test
+    public void removeRider() {
+        Froilanda rider = new Froilanda();
+        CropDuster cd = new CropDuster();
+        cd.setRider(rider);
+        cd.removeRider();
+    }
+
+    @Test
+    public void fertilize() {
+        Froilanda rider = new Froilanda();
+        CropDuster cd = new CropDuster();
+        cd.setRider(rider);
+        cd.fertilize();
+    }
+
+    @Test
+    public void fly() {
+        Froilanda rider = new Froilanda();
+        CropDuster cd = new CropDuster();
+        cd.setRider(rider);
+        String actual = cd.fly();
+        String expected = "Setting off into the air";
+    }
 }
