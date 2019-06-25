@@ -18,19 +18,20 @@ public class Farm {
     }
 
     protected void setUpFarm(){
-        // set up field
-        Field field = Field.getINSTANCE();
+
+        field = Field.getINSTANCE();
 
         // set up farmhouse
         house = FarmHouse.getInstance();
         for(int i = 0; i < 1000; i++){
-            house.getFridge().add(new EarCorn());
+            house.getFridge().add(Edible.EARCORN);
         }
         for(int i = 0; i < 100; i++){
-            house.getFridge().add(new Edamame());
-            house.getFridge().add(new Okra());
-            house.getFridge().add(new Potato());
-            house.getFridge().add(new Tomato());
+            house.getFridge().add(Edible.EDAMAME);
+            house.getFridge().add(Edible.EGG);
+            house.getFridge().add(Edible.OKRA);
+            house.getFridge().add(Edible.POTATO);
+            house.getFridge().add(Edible.TOMATO);
         }
 
         // set up stables
@@ -45,15 +46,14 @@ public class Farm {
 
         // set up coops
         coops = new ArrayList<ChickenCoop>();
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 3; i++){
             coops.add(new ChickenCoop());
             for(int j=0; j < 3; j++){
-                coops.get(i).add(new Chicken());
+                coops.get(i).add(new Chicken( (i)*3+j+1));
             }
         }
-        for(int i= 0; i < 3; i++){
-            coops.get(i).add(new Chicken());
-        }
+        coops.get(2).add(new Chicken(10));
+
     }
 
 

@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 
-
+import java.util.ArrayList;
 
 public class FarmHouse extends House {
 
@@ -15,11 +15,12 @@ public class FarmHouse extends House {
     private Tractor tractor;
     private CropDuster cropDuster;
     private CombineHarvester combineHarvester;
+    private ArrayList<Person> inhabitants;
 
-    private FarmHouse() {
+    protected FarmHouse() {
         fridge = new Refrigerator<Edible>();
-        tractor = new Tractor();
-        cropDuster = new CropDuster();
+        tractor = Tractor.getINSTANCE();
+        cropDuster = CropDuster.getINSTANCE();
         combineHarvester = new CombineHarvester();
     }
 
@@ -28,6 +29,13 @@ public class FarmHouse extends House {
     }
 
 
+    @Override
+    public void remove(Person person) {
+        inhabitants.remove(person);
+    }
 
-
+    @Override
+    public void add(Person person) {
+        inhabitants.add(person);
+    }
 }

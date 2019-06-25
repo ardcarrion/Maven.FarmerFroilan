@@ -1,19 +1,23 @@
 package com.zipcodewilmington.froilansfarm;
 
+import java.util.ArrayList;
+
 public class ChickenCoop extends AnimalStorage<Chicken>{
+    ArrayList<Chicken> chickens = new ArrayList<>();
 
-    void cleanUp() {
+
+   public void remove(Chicken chicken) {
+        chickens.remove(chicken);
     }
 
-    Integer find(Chicken chicken) {
-        return null;
+   public void add(Chicken chicken) {
+        chickens.add(chicken);
+
     }
 
-    void remove(Chicken chicken) {
-    }
 
-    void add(Chicken chicken) {
-
+    public ArrayList<Chicken> getChickens() {
+        return chickens;
     }
 }
 

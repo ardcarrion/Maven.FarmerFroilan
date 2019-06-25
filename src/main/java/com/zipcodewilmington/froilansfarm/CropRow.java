@@ -12,11 +12,18 @@ public class CropRow<T extends Crop> {
     public void addCrop(T t) {
         cropRow.add(t);
     }
+
     public void removeCrop(T t) {
-        cropRow.remove(t);
+        cropRow.removeAll(cropRow);
+
+    }
+
+    public void fertilizeCrops() {
+        for (Crop crop : cropRow) crop.hasBeenFertilized = true;
     }
 
     public ArrayList<T> getCropRow() {
         return cropRow;
     }
+
 }
