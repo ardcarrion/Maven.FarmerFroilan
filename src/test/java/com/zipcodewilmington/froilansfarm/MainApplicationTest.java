@@ -12,7 +12,7 @@ public class MainApplicationTest {
 
     @Test
     public void simulateWeekTest(){
-        String inputString = "\nyes\nwake up\nwake up\nwake up\nwake up\nwake up\nwake up\nwake up\nwake up\n";
+        String inputString = "yes\nwake up\nwake up\nwake up\nwake up\nwake up\nwake up\nwake up\nwake up\n";
         InputStream inputStream = new ByteArrayInputStream(inputString.getBytes());
         Console console = new Console(inputStream, System.out);
         MainApplication.simulateWeek(console);

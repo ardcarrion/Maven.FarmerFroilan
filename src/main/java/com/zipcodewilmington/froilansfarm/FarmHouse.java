@@ -15,6 +15,11 @@ public class FarmHouse extends House {
     private Tractor tractor;
     private CropDuster cropDuster;
     private CombineHarvester combineHarvester;
+
+    public ArrayList<Person> getInhabitants() {
+        return inhabitants;
+    }
+
     private ArrayList<Person> inhabitants;
 
     protected FarmHouse() {
@@ -22,6 +27,7 @@ public class FarmHouse extends House {
         tractor = Tractor.getINSTANCE();
         cropDuster = CropDuster.getINSTANCE();
         combineHarvester = new CombineHarvester();
+        inhabitants = new ArrayList<>();
     }
 
     public Refrigerator<Edible> getFridge(){
