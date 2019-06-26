@@ -10,7 +10,7 @@ public class Silo extends Storage<Edible> {
         return ourInstance;
     }
 
-    private Silo() {
+    protected Silo() {
         food = new ArrayList<>();
     }
 

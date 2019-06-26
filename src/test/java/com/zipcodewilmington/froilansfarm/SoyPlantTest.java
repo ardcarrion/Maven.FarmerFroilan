@@ -17,6 +17,15 @@ public class SoyPlantTest {
         Assert.assertTrue(soyPlant.getHasBeenFertilized());
         Assert.assertTrue(soyPlant.getReadyForHarvest());
     }
+    @Test
+    public void isNotReadyToHarvestTest() {
+        Crop soyPlant = new SoyPlant();
+        soyPlant.setHasBeenFertilized(false);
+        soyPlant.setReadyForHarvest(false);
+
+        Assert.assertFalse(soyPlant.getHasBeenFertilized());
+        Assert.assertFalse(soyPlant.getReadyForHarvest());
+    }
 
     @Test
     public void yieldTest() {
