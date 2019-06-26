@@ -63,4 +63,24 @@ public class TractorTest {
 
        Assert.assertEquals(expected, actual);
    }
+
+    @Test
+    public void getINSTANCE() {
+        Tractor tractor = new Tractor();
+        Rider rider = Froilan.getInstance();
+        rider.mount(tractor);
+        Rider actual = tractor.getRider();
+        Rider expected = rider;
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void harvest() {
+        Tractor tractor = new Tractor();
+        Rider rider = Froilan.getInstance();
+        Crop crop = new CornStalk();
+        Tractor.getINSTANCE().harvest(crop);
+        Assert.assertFalse(crop.readyForHarvest);
+    }
 }

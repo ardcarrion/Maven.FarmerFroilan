@@ -15,7 +15,6 @@ public class ChickenTest {
         Edible expected = EGG;
 
         Assert.assertEquals(expected, actual);
-
     }
 
     @Test
