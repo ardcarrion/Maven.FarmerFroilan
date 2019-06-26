@@ -13,9 +13,8 @@ public class CropRow<T extends Crop> {
         cropRow.add(t);
     }
 
-    public void removeCrop(T t) {
+    public void removeCrops() {
         cropRow.removeAll(cropRow);
-
     }
 
     public void fertilizeCrops() {

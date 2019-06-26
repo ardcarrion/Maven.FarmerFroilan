@@ -29,8 +29,7 @@ public final class CropDuster extends Aircraft implements FarmVehicle{
      public void fertilize(){
         Collection<CropRow> cropRows = Field.getINSTANCE().getCropRows();
         for (CropRow cropRow : cropRows) {
-            ArrayList<Crop> cr = cropRow.getCropRow();
-            for (Crop crop : cr) crop.hasBeenFertilized = true;
+           cropRow.fertilizeCrops();
         }
      }
 

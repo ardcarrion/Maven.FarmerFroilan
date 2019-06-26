@@ -1,8 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 
 public final class Tractor extends Vehicle implements FarmVehicle {
 
@@ -26,7 +24,7 @@ public final class Tractor extends Vehicle implements FarmVehicle {
         for (Crop c : cr) {
             harvest(c);
         }
-        cr.clear();
+        cropRow.removeCrops();
     }
 
     public String makeNoise() {

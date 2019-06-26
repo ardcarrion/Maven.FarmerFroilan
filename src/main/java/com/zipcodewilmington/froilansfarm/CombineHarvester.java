@@ -22,7 +22,7 @@ public final class CombineHarvester extends Vehicle implements FarmVehicle {
             for (Crop crop : cr) {
                 harvest(crop);
             }
-            cr.clear();
+            cropRow.removeCrops();
         }
     }
 

@@ -2,11 +2,6 @@ package com.zipcodewilmington.froilansfarm;
 
 public class OkraPlant extends Crop {
 
-
-    public OkraPlant(Boolean hasBeenFertilized, Boolean readyForHarvest) {
-        super(hasBeenFertilized, readyForHarvest);
-    }
-
     public OkraPlant() {
         super(false, false);
     }

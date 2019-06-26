@@ -62,25 +62,13 @@ public class Farm {
     }
 
 
-    public Field getField() { return field; }
-
-    public void setField(Field field) {
-        this.field = field;
-    }
-
     public FarmHouse getHouse() {
         return house;
     }
 
-    public void setHouse(FarmHouse house) { this.house = house; }
-
-    public void setStables(ArrayList<Stable> stables) { this.stables = stables; }
 
     public List<ChickenCoop> getCoops() {
         return coops;
     }
 
-    public void setCoops(ArrayList<ChickenCoop> coops) {
-        this.coops = coops;
-    }
 }

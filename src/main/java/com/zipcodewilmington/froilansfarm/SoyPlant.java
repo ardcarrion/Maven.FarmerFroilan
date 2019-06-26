@@ -2,10 +2,6 @@ package com.zipcodewilmington.froilansfarm;
 
 public class SoyPlant extends Crop {
 
-    public SoyPlant(Boolean hasBeenFertilized, Boolean readyForHarvest) {
-        super(hasBeenFertilized, readyForHarvest);
-    }
-
     public SoyPlant() {
         super(false, false);
     }

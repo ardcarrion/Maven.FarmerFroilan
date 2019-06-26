@@ -21,11 +21,6 @@ public final class Console {
     }
 
     public void println(String val, Object... vals) {
-        long currentTime = System.currentTimeMillis();
-        long goalTime = currentTime + 250;
-        while (System.currentTimeMillis() != goalTime) {
-            continue;
-        }
         print(val + "\n", vals);
     }
 
@@ -34,32 +29,4 @@ public final class Console {
         return input.nextLine();
     }
 
-    public Double getDoubleInput(String prompt, Object... args) {
-        String stringInput = getStringInput(prompt, args);
-        try {
-            Double doubleInput = Double.parseDouble(stringInput);
-            return doubleInput;
-        } catch (NumberFormatException nfe) { // TODO - Eliminate recursive nature
-            println("[ %s ] is an invalid user input!", stringInput);
-            println("Try inputting a numeric value!");
-            return getDoubleInput(prompt, args);
-        }
-    }
-
-    public Long getLongInput(String prompt, Object... args) {
-        String stringInput = getStringInput(prompt, args);
-        try {
-            Long longInput = Long.parseLong(stringInput);
-            return longInput;
-        } catch (NumberFormatException nfe) { // TODO - Eliminate recursive nature
-            println("[ %s ] is an invalid user input!", stringInput);
-            println("Try inputting an integer value!");
-            return getLongInput(prompt, args);
-        }
-    }
-
-    public Integer getIntegerInput(String prompt, Object... args) {
-        return getLongInput(prompt, args).intValue();
-    }
 }
-
